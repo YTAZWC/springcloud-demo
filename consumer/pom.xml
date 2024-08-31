@@ -35,6 +35,13 @@
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
             <version>2.1.1.RELEASE</version>
         </dependency>
+
+        <!-- 断路器 快速感知服务宕机 将请求转给错误方法 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <version>2.1.1.RELEASE</version>
+        </dependency>
     </dependencies>
 
 </project>
