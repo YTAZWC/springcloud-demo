@@ -9,3 +9,11 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+# 设置访问eureka的密码
+spring:
+  security:
+    basic:
+      enabled: true
+    user:
+      name: username
+      password: password123456

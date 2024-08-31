@@ -7,7 +7,7 @@ user:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8083/eureka/
+      defaultZone: http://username:password123456@localhost:8083/eureka/
 spring:
   application:
     name: service-consumer  # 制定服务提供者的服务名
