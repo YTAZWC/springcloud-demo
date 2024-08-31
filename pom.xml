@@ -16,6 +16,7 @@
     <description>springcloud-demo</description>
     <modules>
         <module>provider</module>
+        <module>provider-02</module>
         <module>consumer</module>
         <module>eureka-01</module>
         <module>eureka-02</module>
