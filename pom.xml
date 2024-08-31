@@ -18,6 +18,7 @@
         <module>provider</module>
         <module>consumer</module>
         <module>eureka-01</module>
+        <module>eureka-02</module>
     </modules>
 
     <properties>
