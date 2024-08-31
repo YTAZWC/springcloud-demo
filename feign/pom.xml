@@ -40,6 +40,22 @@
             <artifactId>feign-okhttp</artifactId>
             <version>10.2.0</version>
         </dependency>
+        <!-- 引入 断路器hystrix的仪表盘依赖 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <version>2.1.1.RELEASE</version>
+        </dependency>
+        <!-- 与hystrix依赖冲突 -->
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+            <version>2.1.1.RELEASE</version>
+        </dependency>
     </dependencies>
 
 </project>

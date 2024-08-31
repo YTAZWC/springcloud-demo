@@ -7,3 +7,13 @@ eureka:
 spring:
   application:
     name: service-feign
+
+# feign 自带的断路器 开启
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

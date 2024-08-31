@@ -3,6 +3,7 @@ package top.ytazwc.cloud.service;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 import top.ytazwc.cloud.pojo.User;
+import top.ytazwc.cloud.service.fallback.UserServiceFallback;
 
 /**
  * @author 花木凋零成兰
@@ -11,7 +12,8 @@ import top.ytazwc.cloud.pojo.User;
  * @package top.ytazwc.cloud.service
  * @description 用户接口
  */
-@FeignClient(value = "SERVICE-PROVIDER")    // 配置调用的服务
+// value 指定服务提供者名，fallback 指定服务调用出错时 的实现类
+@FeignClient(value = "SERVICE-PROVIDER", fallback = UserServiceFallback.class)    // 配置调用的服务
 public interface UserService {
     // 当前Service将请求发送出去 value对应服务的controller地址
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
