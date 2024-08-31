@@ -20,6 +20,7 @@
         <module>consumer</module>
         <module>eureka-01</module>
         <module>eureka-02</module>
+        <module>feign</module>
     </modules>
 
     <properties>
