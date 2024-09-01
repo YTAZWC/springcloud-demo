@@ -1,0 +1,9 @@
+# 配置读取远程配置文件服务地址
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/MengLaoShi/springcloud-config.git
+server:
+  port: 8088

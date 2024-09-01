@@ -9,8 +9,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="provider" />
+        <module name="config-client" />
         <module name="zuul" />
         <module name="eureka-01" />
+        <module name="config-sever" />
         <module name="feign" />
         <module name="consumer" />
         <module name="provider-02" />
@@ -20,6 +22,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config-client" options="-parameters" />
+      <module name="config-sever" options="-parameters" />
       <module name="consumer" options="-parameters" />
       <module name="eureka-01" options="-parameters" />
       <module name="eureka-02" options="-parameters" />
