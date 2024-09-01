@@ -4,6 +4,12 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/MengLaoShi/springcloud-config.git
+          uri: https://gitee.com/ytaml/config-demo
+  application:
+    name: config-server
 server:
   port: 8088
+eureka:
+  client:
+    service-url:
+      defaultZone: http://username:password123456@localhost:8083/eureka/, http://username:password123456@localhost:8084/eureka/

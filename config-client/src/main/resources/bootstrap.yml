@@ -2,8 +2,19 @@
 spring:
   cloud:
     config:
-      uri: http://localhost:8088
+      # uri: http://localhost:8088
       profile: dev    # 读取文件后缀
       label: master   # 当config-server的后端存储是git时 默认是master
+      discovery:
+        enabled: true
+        service-id: config-server
   application:
     name: config-client   # 服务名与配置文件名前缀相同 表示读取该服务的配置文件
+eureka:
+  client:
+    service-url:
+      defaultZone: http://username:password123456@localhost:8083/eureka/, http://username:password123456@localhost:8084/eureka/
+
+
+
+
