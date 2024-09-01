@@ -24,6 +24,7 @@
         <module>zuul</module>
         <module>config-sever</module>
         <module>config-client</module>
+        <module>sidecar</module>
     </modules>
 
     <properties>

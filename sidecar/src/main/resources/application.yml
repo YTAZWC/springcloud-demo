@@ -1,0 +1,15 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://username:password123456@localhost:8083/eureka/, http://username:password123456@localhost:8084/eureka/
+server:
+  port: 14785
+spring:
+  application:
+    name: server-sidecar
+# sidecar 配置
+sidecar:
+  port: 8060    # 非jvm程序运行的端口 因为程序要和非 Java 程序在一个机器中 所以只需要端口即可
+  health-uri: http://localhost:8060/health.json # 非jvm程序用于检查服务状态的接口 返回up表示可用 down不可用
+  hostname: localhost
+

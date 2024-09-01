@@ -13,7 +13,7 @@ var server = http.createServer(function (req, res) {
     } else if (pathname === '/health.json') {
         // 访问http://localhost:8060/health 返回 {"status": "UP"}
         // 对eureka来说 返回 up 表示ok 也可返回down表示no或者程序崩溃无结果默认为down
-        res.end(JSON.stringify({"status": "UP"}));
+        res.end(JSON.stringify({"status": "up"}));
     } else if (pathname === '/userinfo.json') {
         res.end(JSON.stringify({"name":"ytazwc", "age": 21, "address": "China"}));
     } else {

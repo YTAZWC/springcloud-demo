@@ -37,6 +37,11 @@ public class UserController {
         return restTemplate.getForObject(userServicePath + id, User.class);
     }
 
+    @GetMapping("/test")
+    public String findUser() {
+        return restTemplate.getForObject("http://server-sidecar/userinfo.json", String.class);
+    }
+
     // 响应失败时 执行的方法
     // 提供错误信息的方法 与controller方法有同样地参数
     public User error(Long id) {
