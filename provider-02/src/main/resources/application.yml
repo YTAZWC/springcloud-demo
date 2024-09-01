@@ -8,3 +8,7 @@ eureka:
 spring:
   application:
     name: service-provider  # 制定服务提供者的服务名
+# 配置日志追踪级别为 debug
+logging:
+  level:
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
