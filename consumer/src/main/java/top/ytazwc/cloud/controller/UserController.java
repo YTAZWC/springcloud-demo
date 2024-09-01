@@ -1,6 +1,7 @@
 package top.ytazwc.cloud.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ import top.ytazwc.cloud.pojo.User;
  */
 @RestController
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
 
     @Value("${user.userServicePath}")
@@ -30,6 +32,7 @@ public class UserController {
     @GetMapping("/{id}")
     @HystrixCommand(fallbackMethod = "error")
     public User findById(@PathVariable Long id) {
+        log.warn("consumer findById");
         // 远程调用制定地址 并传递参数 将返回结果解析为 User 实体类
         return restTemplate.getForObject(userServicePath + id, User.class);
     }

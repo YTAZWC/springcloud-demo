@@ -1,6 +1,8 @@
 package top.ytazwc.cloud.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import top.ytazwc.cloud.pojo.User;
 import top.ytazwc.cloud.service.UserService;
@@ -13,13 +15,16 @@ import top.ytazwc.cloud.service.UserService;
  * @description
  */
 @RestController
+@Slf4j
 public class UserController {
 
+    @Qualifier("top.ytazwc.cloud.service.UserService")
     @Autowired
     private UserService userService;
 
     @GetMapping("/test")
     public User sayHi(@RequestParam Long id) {
+        log.warn("Feign Test");
         return userService.getUserById(id);
     }
 

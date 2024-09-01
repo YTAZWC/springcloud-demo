@@ -1,0 +1,20 @@
+server:
+  port: 8087
+eureka:
+  client:
+    service-url:
+      defaultZone: http://username:password123456@localhost:8083/eureka/, http://username:password123456@localhost:8084/eureka/
+spring:
+  application:
+    name: server-zuul   # 服务名
+
+# 将请求映射到对应服务
+zuul:
+  # 配置请求路径
+  routes:
+    api-a: # 自定义请求名称
+      path: /api-a/**   # 请求路径
+      service-id: service-consumer    # 映射服务名称
+    api-b:
+      path: /api-b/**
+      service-id: service-feign
