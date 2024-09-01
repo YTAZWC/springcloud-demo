@@ -8,6 +8,12 @@ eureka:
 spring:
   application:
     name: service-provider  # 制定服务提供者的服务名
+  # 配置zipkin可视化链路追踪
+  sleuth:
+    sampler:
+      probability: 1  # 百分之多少的sleuth信息需要输出到zipkin
+    zipkin:
+      base-url: http://localhost:9411/  # 指定zipkin地址
 # 配置日志追踪级别为 debug
 logging:
   level:
